@@ -1,9 +1,9 @@
 import ByteArray from './ByteArray';
 
 interface IDataOutput {
-    get endian(): String;
+    get endian(): string;
 
-    set endian(value: String);
+    set endian(value: string);
 
     get objectEncoding(): number;
 

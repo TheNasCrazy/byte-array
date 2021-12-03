@@ -81,7 +81,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readBoolean(): boolean {
         const value = this.readByte();
-        return value == 1;
+        return value === 1;
     }
 
     readByte(): number {
@@ -97,7 +97,7 @@ class ByteArray implements IDataInput, IDataOutput {
             throw new Error("L'index indiquer sort des limites");
         }
 
-        if (length == 0) {
+        if (length === 0) {
             length = this._buffer.length;
         }
 
@@ -111,7 +111,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readDouble(): number {
         let value: number;
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             value = this._buffer.readDoubleBE(this._position);
         } else {
             value = this._buffer.readDoubleLE(this._position);
@@ -122,7 +122,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readFloat(): number {
         let value: number;
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             value = this._buffer.readFloatBE(this._position);
         } else {
             value = this._buffer.readFloatLE(this._position);
@@ -133,7 +133,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readInt(): number {
         let value: number;
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             value = this._buffer.readInt32BE(this._position);
         } else {
             value = this._buffer.readInt32LE(this._position);
@@ -152,7 +152,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readShort(): number {
         let value: number;
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             value = this._buffer.readInt16BE(this._position);
         } else {
             value = this._buffer.readInt16LE(this._position);
@@ -169,7 +169,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readUnsignedInt(): number {
         let value: number;
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             value = this._buffer.readUInt32BE(this._position);
         } else {
             value = this._buffer.readUInt32LE(this._position);
@@ -180,7 +180,7 @@ class ByteArray implements IDataInput, IDataOutput {
 
     readUnsignedShort(): number {
         let value: number;
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             value = this._buffer.readUInt16BE(this._position);
         } else {
             value = this._buffer.readUInt16LE(this._position);
@@ -225,7 +225,7 @@ class ByteArray implements IDataInput, IDataOutput {
             throw new Error("L'index indiquer sort des limites");
         }
 
-        if (length == 0) {
+        if (length === 0) {
             length = bytes.length - offset;
         }
 
@@ -237,30 +237,30 @@ class ByteArray implements IDataInput, IDataOutput {
 
     writeDouble(value: number): void {
         this._extendsData(8);
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             this._buffer.writeDoubleBE(value, this._position);
         } else {
-            this._buffer.writeDoubleLE(value), this._position;
+            this._buffer.writeDoubleLE(value, this._position);
         }
         this._position += 8;
     }
 
     writeFloat(value: number): void {
         this._extendsData(4);
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             this._buffer.writeFloatBE(value, this._position);
         } else {
-            this._buffer.writeFloatLE(value), this._position;
+            this._buffer.writeFloatLE(value, this._position);
         }
         this._position += 4;
     }
 
     writeInt(value: number): void {
         this._extendsData(4);
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             this._buffer.writeInt32BE(value, this._position);
         } else {
-            this._buffer.writeInt32LE(value), this._position;
+            this._buffer.writeInt32LE(value, this._position);
         }
         this._position += 4;
     }
@@ -275,20 +275,20 @@ class ByteArray implements IDataInput, IDataOutput {
 
     writeShort(value: number): void {
         this._extendsData(2);
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             this._buffer.writeInt16BE(value, this._position);
         } else {
-            this._buffer.writeInt16LE(value), this._position;
+            this._buffer.writeInt16LE(value, this._position);
         }
         this._position += 2;
     }
 
     writeUnsignedInt(value: number): void {
         this._extendsData(4);
-        if (this._endian == 'BIG_ENDIAN') {
+        if (this._endian === 'BIG_ENDIAN') {
             this._buffer.writeUInt32BE(value, this._position);
         } else {
-            this._buffer.writeUInt32LE(value), this._position;
+            this._buffer.writeUInt32LE(value, this._position);
         }
         this._position += 4;
     }
