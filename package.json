@@ -2,8 +2,8 @@
     "name": "@naslib/bytearray",
     "version": "0.0.1",
     "description": "greate ByteArray",
-    "main": "lib/ByteArray.js",
-    "types": "lib/ByteArray.d.ts",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "files": [
         "lib/**/*"
     ],
