@@ -1,5 +1,5 @@
 {
-    "name": "@naslib/bytearray",
+    "name": "naslib-bytearray",
     "version": "0.0.1",
     "description": "greate ByteArray",
     "main": "lib/index.js",
