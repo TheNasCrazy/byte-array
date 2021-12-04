@@ -1,5 +1,5 @@
 {
-    "name": "bytearray",
+    "name": "@naslib/bytearray",
     "version": "0.0.1",
     "description": "greate ByteArray",
     "main": "lib/ByteArray.js",
@@ -20,7 +20,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/TheNasCrazy/bytearray.git"
+        "url": "git+https://github.com/TheNasCrazy/naslib-bytearray"
     },
     "keywords": [],
     "author": "",
