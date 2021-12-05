@@ -79,6 +79,15 @@ class ByteArray implements IDataInput, IDataOutput {
         this._buffer[index] = value;
     }
 
+    clear(): void {
+        this._buffer = Buffer.alloc(0);
+        this._position = 0;
+    }
+
+    toString(): string {
+        return this._buffer.toString();
+    }
+
     readBoolean(): boolean {
         const value = this.readByte();
         return value === 1;
